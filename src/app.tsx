@@ -19,7 +19,8 @@ export function App() {
 
   return (
     <>
-      {finalData.length > 0 ? <div class="w-full mx-8 rounded-xl border border-slate-200 overflow-scroll">
+    <p class="text-2xl mb-2 md:hidden">Tabla</p>
+      {finalData.length > 0 ? <div class="w-full mr-8 mb-8 md:mb-0 rounded-xl border border-slate-200 overflow-scroll">
         <table class="table-auto w-full h-full">
           <thead class="bg-slate-200">
             <tr>
@@ -40,10 +41,11 @@ export function App() {
             </tr>)}
           </tbody>
         </table>
-      </div> : <div class="w-full mx-8 rounded-xl border border-slate-200 flex justify-center items-center">
+      </div> : <div class="w-full h-64 md:h-auto mr-8 mb-8 md:mb-0 rounded-xl border border-slate-200 flex justify-center items-center text-center">
         <p class="text-2xl">Por favor, complete el formulario.</p>
       </div>}
-      <div class="flex flex-col m-auto">
+      <p class="text-2xl mb-2 md:hidden">Formulario</p>
+      <div class="flex flex-col">
         <label for="importe">Importe:</label>
         <input type="text" inputMode="numeric" onKeyPress={(e) => !/[0-9|.]/.test(e.key) && e.preventDefault()} id="importe" value={importeString} onChange={x => setImporteString(x.currentTarget.value)} class="p-2 border border-slate-200 rounded-xl box-border h-12 mb-4" />
 
